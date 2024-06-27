@@ -15,5 +15,5 @@ To access the admin page ([127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)) s
 
 ## Contributing
 To contribute, please fork the repository, and make a pull request with your changes.  
-For now, make pull requests to the main branch. This may change in the future.
+For now, make pull requests to the main branch. This may change in the future.  
 Before making a pull request, remove `db.sqlite3` from the root directory

@@ -6,7 +6,7 @@ WARNING: THIS PROJECT IS NOT CONFIGURED TO RUN AS A PUBLIC WEBSITE! ONLY RUN LOC
 ## Running locally
 1. Clone the repo or click "Code" then "Download ZIP"
 2. Install [python 3](https://python.org)
-3. Run `pip3 install -r requirements.txt` to install python libraries
+3. Run `pip3 install -r requirements.txt` to install python libraries (this command can vary depending on OS, and how you install python)
 4. In the root directory, run `py manage.py runserver`
 5. Go to [127.0.0.1:8000](http://127.0.0.1:8000) in your browser
 

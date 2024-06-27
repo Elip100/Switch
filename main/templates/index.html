@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block main %}
+<title>Scratch+</title>
+<div class="box-thicc">
+    <h1>Featured Projects</h1>
+    <div class="box-light" style="height: 395px; overflow-y: scroll;">
+        {% for project in featured.community_featured_projects %}
+        <a title="{{ project.title }}" href="/project/{{ project.id }}" class="project-link">
+            <div class="project">
+                <img src="{{ project.thumbnail_url }}" class="thumbnail">
+                <span class="title">{{ project.title }}</span>
+                <span class="author">{{ project.creator }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="box-thicc">
+    <h1>Featured Studios</h1>
+    <div class="box-light" style="height: 250px; overflow-y: scroll;">
+        {% for studio in featured.community_featured_studios %}
+        <a title="{{ studio.title }}" href="/studio/{{ studio.id }}" class="project-link">
+            <div class="project studio">
+                <img src="{{ studio.thumbnail_url }}" class="thumbnail">
+                <span class="title">{{ studio.title }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="box-thicc">
+    <h1>Popular Right Now</h1>
+    <div class="box-light" style="height: 395px; overflow-y: scroll;">
+        {% for project in featured.community_most_loved_projects %}
+        <a title="{{ project.title }}" href="/project/{{ project.id }}" class="project-link">
+            <div class="project">
+                <img src="{{ project.thumbnail_url }}" class="thumbnail">
+                <span class="title">{{ project.title }}</span>
+                <span class="author">{{ project.creator }}</span><br>
+                <div class="like-container">
+                    <span class="material-symbols-outlined">thumb_up</span>
+                    <span class="like-count">{{ project.love_count }}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<style>
+    .project{
+        width: 297px;
+    }
+    .project:hover {
+        width: 303.4px;
+    }
+    .project .author{
+        display: inline-block;
+        width: 100%;
+        word-wrap: break-word;
+        white-space: inherit;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="box">
+    <h1>{% if type == "login" %}Login{% else %}Create Account{% endif %}</h1>
+    {% if not type == "login" %}<p style="font-size: large;">Please choose an option. You can change this in your account settings.</p>{% endif %}
+    <div class="box-light" style="display: flex; justify-content: center; align-items: center;">
+        <a href="{{ auth_link }}" class="project-link">
+            <div class="project">
+                <img src="https://auth.itinerary.eu.org/favicon.svg" class="thumbnail">
+                <span class="title">Scratch Auth</span>
+                {% if not type == "login" %}<span class="author">Simple, fast, and secure! We only see public information from the Scratch website.</span>{% endif %}
+            </div>
+        </a>
+        <div class="vertical-line"></div>
+        <a href="{{ pass_link }}" class="project-link">
+            <div class="project">
+                <img src="https://scratch.mit.edu/images/logo_sm.png" class="thumbnail">
+                <span class="title">Username & Password</span>
+                {% if not type == "login" %}<span class="author">Login with your Scratch account, and gain the ability to favorite projects, comment, and more!</span>{% endif %}
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

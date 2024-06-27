@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="box">
+    <h1>{% if type == "login" %}Login{% else %}Create Account{% endif %}</h1>
+    <form action="/verifylogin/?type={{ type }}&mode=PA" method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" class="TextField"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" class="TextField" name="password" id="password"><br><br>
+        <button type="submit">{% if type == "login" %}Login{% else %}Create Account{% endif %}</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="box">
+    <h1 class="NTO" title="{{ project.title }}">{{ project.title }}</h1>
+    <p><a href="/user/{{ project.author }}/">{{ project.author }}</a></p>
+    <iframe src="https://turbowarp.org/{{ project.id }}/embed?settings-button&addons=pause,gamepad" width="964" height="824" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe><br>
+    <button class="unfilled like-button border" onclick="like()" title="Like this project (love on Scratch)">
+        <div class="like-container" style="margin-top: auto;">
+            <span class="material-symbols-outlined">thumb_up</span>
+            <span class="like-count">{{ project.loves }}</span>
+        </div>
+    </button>
+    <button class="unfilled dislike-button border" onclick="dislike()" title="Dislike this project (does not translate to Scratch)">
+        <div class="like-container" style="margin-top: auto;">
+            <span class="material-symbols-outlined">thumb_down</span>
+            <span class="like-count">0</span>
+        </div>
+    </button>
+</div>
+
+<script>
+    const likebutton = document.querySelector(".like-button");
+    const dislikebutton = document.querySelector(".dislike-button");
+    function like(){   
+        likebutton.classList.toggle("unfilled")
+        dislikebutton.classList.add("unfilled")
+    }
+    function dislike(){
+        dislikebutton.classList.toggle("unfilled")
+        likebutton.classList.add("unfilled")
+    }
+</script>
+
+{% endblock %}
